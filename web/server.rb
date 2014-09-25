@@ -11,22 +11,22 @@ class PingPongTournament::Server < Sinatra::Application
   end
 
   get '/tournament' do
-
-
-  end
-
-  post '' do
+    erb :tournament
 
   end
+
+  #Player form post
+  post '/create' do
+    name = params['player-name']
+    player = PingPongTournament::Player.create(name: name)
+  end
+
+  #Tournament form post
+  post 'create_tournament' do
   
-  #Post sent by the form contains all the names
-  post '' do
-    names =[]
-    params.each do |k,v|
-      names << v
   end
 
-end
+
 
 
   run! if __FILE__ == $0
