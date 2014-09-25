@@ -28,7 +28,6 @@ class PingPongTournament::Server < Sinatra::Application
 
 
 
-
   run! if __FILE__ == $0
 
 end
