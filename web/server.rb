@@ -68,7 +68,6 @@ class PingPongTournament::Server < Sinatra::Application
       id = player.id
       match = PingPongTournament::Match.find_by(id: v)
       match.update(winner: id)
-
     end
     
 
