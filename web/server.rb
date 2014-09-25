@@ -5,28 +5,28 @@ require 'sinatra/reloader'
 
 class PingPongTournament::Server < Sinatra::Application
 
-  get '/index' do
-    
+  get '/' do
+    erb :index
 
   end
 
   get '/tournament' do
-
+    erb :tournament
 
   end
 
-  get '/new_player' do
-
-  erb: :new_player 
+  #Player form post
+  post '/create' do
+    name = params['player-name']
+    player = PingPongTournament::Player.create(name: name)
   end
 
-  post '/create_player' do
-  	# params["player-name"]
-  	# feed names of player to table players
+  #Tournament form post
+  post 'create_tournament' do
+  
   end
 
-  post '/create_tournament' do 
-  end
+
 
   run! if __FILE__ == $0
 
