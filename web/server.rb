@@ -55,14 +55,16 @@ class PingPongTournament::Server < Sinatra::Application
       players.push(PingPongTournament::Player.find(m.player1).name)
       players.push(PingPongTournament::Player.find(m.player2).name)
     end
+
     erb :tournament, :locals => {matches: matches,
                                 tournament: tournament,
                                 players: players}
-
-
   end
 
+  post '/submit-tournament' do
+    params
 
+  end
 
   run! if __FILE__ == $0
 
