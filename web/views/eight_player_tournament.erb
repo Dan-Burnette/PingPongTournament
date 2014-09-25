@@ -1,0 +1,12 @@
+<h1>New Tournament: 8 players</h1>
+<form action = '/create_tournament', method = 'post'>
+	<label for="tourney_name">Enter a tournament name:</label>
+	<input type="text" name="tourney_name"></br>
+      <% if @players %>
+         <% @players.each do |p| %>
+         	<label for="players"><%="#{p.name}"%></label>
+         	<input type="checkbox" name="players[]" value="<%="#{p.name}"%>"></br>
+         <% end %>
+      <% end %>
+   <input name ='submit', type = 'submit'>
+ </form>

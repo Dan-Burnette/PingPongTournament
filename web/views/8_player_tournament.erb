@@ -1,15 +1,11 @@
 <h1>New Tournament: 8 players</h1>
 
+
 <!--This form is for management purposes only, with it we will be able to populate the TOURNAMENT table with a name-->
 
 <!--Each player will be inserted from the player form and that information will be fed to an array, we will randomize this array, and use it to populate our form-->
+<form action = '/create_tournament', method = 'post'>
 
-@players = ['array for players from the players form']
-
-
-
-
-<form action = '/create', method = 'post'>
    <label for = 'tournament-name'>Tournament Name: </label>
    <input name = 'tournament-name', type = 'text'></br>
    <input name ='submit', type = 'submit'></br>
