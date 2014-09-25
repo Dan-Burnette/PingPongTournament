@@ -1,6 +1,7 @@
 require_relative '../lib/ping_pong_tournament.rb'
 require_relative '../config/environments.rb'
 
+require 'active_record'
 require 'sinatra'
 require 'sinatra/reloader'
 require 'pry-byebug'
@@ -11,14 +12,13 @@ class PingPongTournament::Server < Sinatra::Application
 
   get '/' do
     erb :index
-
   end
 
   get '/tournament' do
     erb :tournament
-
   end
 
+  #Create a new player
   get '/create' do
     erb :new_player
   end
@@ -58,7 +58,8 @@ class PingPongTournament::Server < Sinatra::Application
     erb :tournament, :locals => {matches: matches,
                                 tournament: tournament,
                                 players: players}
-    #redirect to '/tournament'
+
+
   end
 
 
