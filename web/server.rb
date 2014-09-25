@@ -5,8 +5,8 @@ require 'sinatra/reloader'
 
 class PingPongTournament::Server < Sinatra::Application
 
-  get '/index' do
-    
+  get '/' do
+    erb :index
 
   end
 
@@ -14,6 +14,20 @@ class PingPongTournament::Server < Sinatra::Application
 
 
   end
+
+  post '' do
+
+  end
+  
+  #Post sent by the form contains all the names
+  post '' do
+    names =[]
+    params.each do |k,v|
+      names << v
+  end
+
+end
+
 
   run! if __FILE__ == $0
 
