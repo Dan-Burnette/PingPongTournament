@@ -55,14 +55,23 @@ class PingPongTournament::Server < Sinatra::Application
       players.push(PingPongTournament::Player.find(m.player1).name)
       players.push(PingPongTournament::Player.find(m.player2).name)
     end
+
     erb :tournament, :locals => {matches: matches,
                                 tournament: tournament,
                                 players: players}
-
-
   end
 
+  post '/submit-tournament' do
 
+    params.each do |k,v|
+      player = PingPongTournament::Player.find_by(name: k)
+      id = player.id
+      match = PingPongTournament::Match.find_by(id: v)
+      match.update(winner: id)
+    end
+    
+
+  end
 
   run! if __FILE__ == $0
 

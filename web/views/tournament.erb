@@ -16,10 +16,11 @@
 		<td></td>
 		<td></td>
 		<td></td>
+
 	</tr>
 	<tr class="invisible">
 		<td></td>
-		<td class="player-cell round1-match1winner">winner1</td>
+		<td class="player-cell round1-match1winner winner" data-ref="<%="#{matches[0].id}"%>">winner1</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -59,7 +60,7 @@
 	</tr>
 	<tr class="invisible">
 		<td></td>
-		<td class="player-cell round1-match2winner">winner2</td>
+		<td class="player-cell round1-match2winner winner" data-ref="<%="#{matches[1].id}"%>">winner2</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -100,7 +101,7 @@
 	</tr>
 	<tr class="invisible">
 		<td></td>
-		<td class="player-cell round1-match3winner">winner3</td>
+		<td class="player-cell round1-match3winner winner" data-ref="<%="#{matches[2].id}"%>">winner3</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -131,7 +132,7 @@
 	</tr>
 	<tr>
 
-		<td class="player-cell round1-match4"><%=players[6]%></td>
+		<td class="player-cell round1-match4 "><%=players[6]%></td>
 
 		<td></td>
 		<td></td>
@@ -142,7 +143,7 @@
 	</tr>
 	<tr class="invisible">
 		<td></td>
-		<td class="player-cell round1-match4winner">winner4</td>
+		<td class="player-cell round1-match4winner winner" data-ref="<%="#{matches[3].id}"%>">winner4</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -160,6 +161,7 @@
 		<td></td>
 	</tr>
 </table>
+<button class='submit-tournament'> Next Round </button>
 
 <style type="text/css">
 
@@ -196,5 +198,32 @@
 
 	});
 
+</script>
 
+
+<script>
+//AJAX Stuff 
+	$('.submit-tournament').on('click', function(e){
+		e.preventDefault();
+		var myJSON = {};
+
+
+		$('.winner').each(function(){
+			var winnerName = $(this).text();
+			var matchId = $(this).data('ref');
+			myJSON[winnerName] = matchId;
+		})
+
+		//Should send JSON in form {0: "winner1", 1: "winner2", 2: "winner3" etc}
+		$.ajax({
+			url: '/submit-tournament',
+			dataType: 'json',
+			type: 'POST',
+			data: myJSON,
+			success: function(){
+				console.log("I did it, I SENT...", myJSON);
+			}
+
+		})
+	})
 </script>
