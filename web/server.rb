@@ -50,8 +50,14 @@ class PingPongTournament::Server < Sinatra::Application
       PingPongTournament::Match.create(player1: player1.id, player2: player2.id, tournament_id: tournament.id)
     end
     matches = PingPongTournament::Match.where(tournament_id: tournament.id)
+    players = []
+    matches.each do |m|
+      players.push(PingPongTournament::Player.find(m.player1).name)
+      players.push(PingPongTournament::Player.find(m.player2).name)
+    end
     erb :tournament, :locals => {matches: matches,
-                                tournament: tournament}
+                                tournament: tournament,
+                                players: players}
     #redirect to '/tournament'
   end
 

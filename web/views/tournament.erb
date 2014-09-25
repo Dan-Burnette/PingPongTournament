@@ -1,7 +1,3 @@
-<%matches.each do |m| %>
-	<%= m.tournament_id %>
-	<% end %>
-
 <table class="tg 16player">
 	<th>Tournament</th>
 	<tr>
@@ -10,7 +6,7 @@
    		<td class="round">Round3</td>
    </tr>
 	<tr>
-		<td class="player-cell">player1</td>
+		<td class="player-cell"><%=players[0]%></td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -29,7 +25,7 @@
 		<td></td>
 	</tr>
 	<tr>
-		<td class="player-cell">player2</td>
+		<td class="player-cell"><%=players[1]%></td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -47,7 +43,7 @@
 		<td></td>
 	</tr>
 	<tr>
-		<td class="player-cell">player3</td>
+		<td class="player-cell"><%=players[2]%></td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -65,7 +61,7 @@
 		<td></td>
 	</tr>
 	<tr>
-		<td class="player-cell">player4</td>
+		<td class="player-cell"><%=players[3]%></td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -83,7 +79,7 @@
 		<td></td>
 	</tr>
 	<tr>
-		<td class="player-cell">player5</td>
+		<td class="player-cell"><%=players[4]%></td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -101,7 +97,7 @@
 		<td></td>
 	</tr>
 	<tr>
-		<td class="player-cell">player6</td>
+		<td class="player-cell"><%=players[5]%></td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -119,7 +115,7 @@
 		<td></td>
 	</tr>
 	<tr>
-		<td class="player-cell">player7</td>
+		<td class="player-cell"><%=players[6]%></td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -137,7 +133,7 @@
 		<td></td>
 	</tr>
 	<tr>
-		<td class="player-cell">player8</td>
+		<td class="player-cell"><%=players[7]%></td>
 		<td></td>
 		<td></td>
 		<td></td>
