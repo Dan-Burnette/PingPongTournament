@@ -6,7 +6,7 @@
    		<td class="round">Round3</td>
    </tr>
 	<tr>
-		<td class="player-cell">player1</td>
+		<td class="player-cell round1-match1">player1</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -17,7 +17,7 @@
 	</tr>
 	<tr class="invisible">
 		<td></td>
-		<td class="player-cell">winner1</td>
+		<td class="player-cell round1-match1winner">winner1</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -25,7 +25,7 @@
 		<td></td>
 	</tr>
 	<tr>
-		<td class="player-cell">player2</td>
+		<td class="player-cell round1-match1">player2</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -43,7 +43,7 @@
 		<td></td>
 	</tr>
 	<tr>
-		<td class="player-cell">player3</td>
+		<td class="player-cell round1-match2">player3</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -53,7 +53,7 @@
 	</tr>
 	<tr class="invisible">
 		<td></td>
-		<td class="player-cell">winner2</td>
+		<td class="player-cell round1-match2winner">winner2</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -61,7 +61,7 @@
 		<td></td>
 	</tr>
 	<tr>
-		<td class="player-cell">player4</td>
+		<td class="player-cell round1-match2">player4</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -79,7 +79,7 @@
 		<td></td>
 	</tr>
 	<tr>
-		<td class="player-cell">player5</td>
+		<td class="player-cell round1-match3">player5</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -89,7 +89,7 @@
 	</tr>
 	<tr class="invisible">
 		<td></td>
-		<td class="player-cell">winner3</td>
+		<td class="player-cell round1-match3winner">winner3</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -97,7 +97,7 @@
 		<td></td>
 	</tr>
 	<tr>
-		<td class="player-cell">player6</td>
+		<td class="player-cell round1-match3">player6</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -115,7 +115,7 @@
 		<td></td>
 	</tr>
 	<tr>
-		<td class="player-cell">player7</td>
+		<td class="player-cell round1-match4">player7</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -125,7 +125,7 @@
 	</tr>
 	<tr class="invisible">
 		<td></td>
-		<td class="player-cell">winner4</td>
+		<td class="player-cell round1-match4winner">winner4</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -133,7 +133,7 @@
 		<td></td>
 	</tr>
 	<tr>
-		<td class="player-cell">player8</td>
+		<td class="player-cell round1-match4">player8</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -144,13 +144,7 @@
 </table>
 
 <style type="text/css">
-/*.tg  {
-    border-collapse:collapse;
-    border-spacing:0;
-}*/
-/*td {
-	margin-right: 10px
-}*/
+
 
 .round {
 	font-family:Arial-Black; 
@@ -169,45 +163,20 @@
     margin-right: 
 }
 
-/*.round2{
-    font-family:Arial-Black; 
- text-align: center;
-    sans-serif;
-    font-size:14px;
-    padding:10px 5px;
-    border-style:solid;
-    border-width:2px;
-    overflow:hidden;
-    word-break:normal;
-    background-color: red;
-}*/
 
-/*.invisible {*/
- /*   font-family:Arial; 
- text-align: center;
-    sans-serif;
-    font-size:5px;
-    padding:10px 5px;
-    border-style:solid;
-    border-width:2px;*/
-/* border-color: #FF9900 ;*/
-    /*overflow:hidden;
-    word-break:normal;*/
-/*    background-color: blue;*/
-
-}
-/*
-.tg th{
-    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
- text-align: center;
-    sans-serif;
-    font-size:25px;
-    font-weight:normal;
-    padding:16px 8px;
-    border-style:solid;
-    border-width:8px;
- border-color:#FF9900 ;
-    overflow:hidden;
-    word-break:normal;
-}*/
 </style>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('.round1-match1').on('click', function() {
+			$(this).css('background-color', '#00ff00');
+			$('.round1-match1winner').text($(this).text());
+			$('.round1-match1winner').css('background-color', '#00ff00');
+			$('.round1-match1').not($(this)).css('background-color', 'red');
+		});
+
+
+	});
+
+
+</script>
