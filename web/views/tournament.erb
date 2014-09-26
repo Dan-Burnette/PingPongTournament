@@ -1,178 +1,200 @@
-<table class="tg16player">
-    <th><%=tournament.name%></th>
-    <tr> 
-        <td class="round">Round1</td>
-          <td class="round">Round2</td>
-          <td class="round">Round3</td>
-  </tr>
-    <tr>
+<h1><%=tournament.name%></h1>
+<table>
+<tr>
+    <td>
+            <table class="tg16player">
+                <th></th>
+                <tr> 
+                    <td class="round"><h1>Round1</h1></td>
+                    <td class="round"><h1>Round2</h1></td>
+                    <td class="round"><h1>Round3</h1></td>
+                    <td class="fake"><h1>Dingussss</h1></td>
+              </tr>
+                <tr>
 
-        <td class="player-cell round1-match1"><%=players[0]%></td>
+                    <td class="player-cell round1-match1"><%=players[0]%></td>
 
-        <td class="invisible"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+                    <td class="invisible"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
 
-    </tr>
-    <tr class="invisible">
-        <td></td>
+                </tr>
+                <tr class="invisible">
+                    <td></td>
 
-        <td class="player-cell round1-match1winner winner-t1 round2-match1" data-ref="<%="#{matches[0].id}"%>">winner1</td>
+                    <td class="player-cell round1-match1winner winner-t1 round2-match1" data-ref="<%="#{matches[0].id}"%>">winner1</td>
 
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
 
-        <td class="player-cell round1-match1"><%=players[1]%></td>
-        <td class="pointer"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr class="invisible">
-        <td></td>
-        <td></td>
-        <td class="player-cell round2-match1winner round2-match1winner finals">semi winner</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
+                    <td class="player-cell round1-match1"><%=players[1]%></td>
+                    <td class="pointer"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="invisible">
+                    <td></td>
+                    <td></td>
+                    <td class="player-cell round2-match1winner round2-match1winner finals">semi winner</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
 
-        <td class="player-cell round1-match2"><%=players[2]%></td>
+                    <td class="player-cell round1-match2"><%=players[2]%></td>
 
-        <td class="pointer"></td>
-        <td class="pointer"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr class="invisible">
-        <td></td>
+                    <td class="pointer"></td>
+                    <td class="pointer"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="invisible">
+                    <td></td>
 
-        <td class="player-cell round1-match2winner winner-t1 round2-match1" data-ref="<%="#{matches[1].id}"%>">winner2</td>
+                    <td class="player-cell round1-match2winner winner-t1 round2-match1" data-ref="<%="#{matches[1].id}"%>">winner2</td>
 
-        <td class="pointer"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
+                    <td class="pointer"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
 
-        <td class="player-cell round1-match2"><%=players[3]%></td>
+                    <td class="player-cell round1-match2"><%=players[3]%></td>
 
-        <td></td>
-        <td class="pointer"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr >
-        <td ></td>
-        <td></td>
-        <td></td>
-        <td class="player-cell champ">champion</td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-
-
-        <td class="player-cell round1-match3"><%=players[4]%></td>
-
-        <td></td>
-        <td class="pointer"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr class="invisible">
-        <td></td>
-
-        <td class="player-cell round1-match3winner winner-t1 round2-match2" data-ref="<%="#{matches[2].id}"%>">winner3</td>
+                    <td></td>
+                    <td class="pointer"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr >
+                    <td ></td>
+                    <td></td>
+                    <td></td>
+                    <td class="player-cell champ">champion</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
 
 
-        <td class="pointer"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
+                    <td class="player-cell round1-match3"><%=players[4]%></td>
+
+                    <td></td>
+                    <td class="pointer"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="invisible">
+                    <td></td>
+
+                    <td class="player-cell round1-match3winner winner-t1 round2-match2" data-ref="<%="#{matches[2].id}"%>">winner3</td>
 
 
-        <td class="player-cell round1-match3"><%=players[5]%></td>
+                    <td class="pointer"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
 
-        <td class="pointer"></td>
-        <td class="pointer"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr class="invisible">
-        <td></td>
-        <td></td>
-        <td class="player-cell round2-match2winner finals">semi winner</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
 
-        <td class="player-cell round1-match4 "><%=players[6]%></td>
+                    <td class="player-cell round1-match3"><%=players[5]%></td>
 
-        <td class="pointer"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr class="invisible">
-        <td></td>
+                    <td class="pointer"></td>
+                    <td class="pointer"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="invisible">
+                    <td></td>
+                    <td></td>
+                    <td class="player-cell round2-match2winner finals">semi winner</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
 
-        <td class="player-cell round1-match4winner winner-t1 round2-match2" data-ref="<%="#{matches[3].id}"%>">winner4</td>
+                    <td class="player-cell round1-match4 "><%=players[6]%></td>
 
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
+                    <td class="pointer"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="invisible">
+                    <td></td>
 
-        <td class="player-cell round1-match4"><%=players[7]%></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+                    <td class="player-cell round1-match4winner winner-t1 round2-match2" data-ref="<%="#{matches[3].id}"%>">winner4</td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+
+                    <td class="player-cell round1-match4"><%=players[7]%></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </td>
+        <td class='fancy'>
+            <img src="http://news.xinhuanet.com/english/photo/2012-04/21/131542506_21n.jpg" width="100%" height="90%">
+        </td>
+        <td class='banner' bgcolor="#33CCFF">Will</td>
+        <td class='banner' bgcolor="#FF0000">You</td>
+        <td class='banner' bgcolor="#FFFFFF">Win?</td>
+
     </tr>
 </table>
-
 <button class='submit-tournament myButton'> Next Round </button>
 
 
 <style type="text/css">
+
+.tg16player {
+    border-spacing: 0;
+}
+
+.fake {
+    color: #66FFCC;
+}
 
 .pointer {
     border-right: 2px solid black;
@@ -191,12 +213,12 @@
 
 .player-cell {
     font-family:Arial-Black; 
-  text-align: center;
+    text-align: center;
     sans-serif;
     font-size:14px;
     padding:10px 5px;
     border-style:solid;
-    border-width:2px;
+    border-width:2px;s
     margin:0;
     background-color:gray;
 }

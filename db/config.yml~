@@ -1,11 +1,11 @@
 development:
   adapter: postgresql
-  database: pingpong
+  database: pingpong_dev
   pool: 5
-  timeout: 5000
+  timeout: 50000
 
 test:
   adapter: postgresql
-  database: pingpong
+  database: pingpong_test
   pool: 5
-  timeout: 5000
+  timeout: 50000

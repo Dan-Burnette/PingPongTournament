@@ -1,5 +1,5 @@
 <h1>New Tournament: 8 players</h1>
-<form action = '/create_tournament', method = 'post'>
+<form action = '/create_tournament', method = 'post' class="myform">
 	<label for="tourney_name">Enter a tournament name:</label>
 	<input type="text" name="tourney_name"></br>
       <% if @players %>
@@ -8,6 +8,36 @@
          	<input type="checkbox" name="players[]" value="<%="#{p.name}"%>"></br>
          <% end %>
       <% end %>
-   <input name ='submit', type = 'submit'>
+   <button class="submit-button">Start</button>
  </form>
+
+ <script>
+
+ var checkCounter = 0;
+ $('input:checkbox').change(function() {
+ 	if ($(this).is(':checked')){
+ 		checkCounter++;
+ 	}
+ 	else {
+ 		checkCounter--;
+ 	}
+ 	console.log(checkCounter);
+ });
+
+
+
+ $('.submit-button').on('click',function(){
+
+ 	if (checkCounter == 8){
+ 		console.log("In the if");
+ 		$('.myform').submit();
+ 	}
+ 	else {
+ 		console.log("In the else");
+ 	});
+ 	}
+ });
+
+  </script>
+
 
