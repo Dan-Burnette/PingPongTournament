@@ -293,7 +293,7 @@
 		timesPressed ++;
 		e.preventDefault();
 		if (timesPressed == 1) {
-			var myJSON = {};
+			var myJSON = {round: 1};
 			$('.winner-t1').each(function(){
 				var winnerName = $(this).text();
 				var matchId = $(this).data('ref');
@@ -302,11 +302,20 @@
 		}
 
 		else if (timesPressed == 2){
-			var myJSON = {};
+			var myJSON = {round: 2};
+			var counter = 0;
 			$('.finals').each(function(){
 				var winnerName = $(this).text();
-				var matchId = $(this).data('ref');
-				myJSON[winnerName] = matchId;
+				myJSON[counter] = winnerName;
+				counter++;
+			})
+		}
+
+		else if (timesPressed == 3){
+			var myJSON = {round: 3};
+			$('.champ').each(function () {
+				var winnerName = $(this).text();
+				myJSON[0] = winnerName;
 			})
 		}
 

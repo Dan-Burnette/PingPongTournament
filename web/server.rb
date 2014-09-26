@@ -63,20 +63,48 @@ class PingPongTournament::Server < Sinatra::Application
 
   post '/submit-tournament' do
     puts params
-
+    tournamentid = -1
+    if (params['round'] == '1') 
       params.each do |k,v|
-        player = PingPongTournament::Player.find_by(name: k)
-        id = player.id
-        match = PingPongTournament::Match.find_by(id: v)
-        match.update(winner: id)
-
-        #if params.length ==1, that match is the final match; that winner id is the tournament winner
-        #Need to set that player id to the tournament winner
-        if (params.length == 1)
-          #TODO
+        if (k == 'round')
+        #don't do anything
+        else
+          player = PingPongTournament::Player.find_by(name: k)
+          id = player.id
+          match = PingPongTournament::Match.find_by(id: v)
+          tournamentid = match.tournament_id
+          match.update(winner: id)
         end
-
       end
+      #make matches for nxt round
+      players = params.keys
+      player1 = PingPongTournament::Player.find_by(name: players[1])
+      player2 = PingPongTournament::Player.find_by(name: players[2])
+      player3 = PingPongTournament::Player.find_by(name: players[3])
+      player4 = PingPongTournament::Player.find_by(name: players[4])
+      match1 = PingPongTournament::Match.create(player1: player1.id , player2: player2.id, tournament_id: tournamentid)
+      match2 = PingPongTournament::Match.create(player1: player3.id , player2: player4.id, tournament_id: tournamentid)
+    end
+  
+    if (params['round'] == '2')
+      matches = PingPongTournament::Match.last(2)
+      player1 = PingPongTournament::Player.find_by(name: params['0'])
+      player2 = PingPongTournament::Player.find_by(name: params['1'])
+      matches[0].update(winner: player1.id)
+      matches[1].update(winner: player2.id)
+      tournamentid = matches[0].tournament_id
+      new_match = PingPongTournament::Match.create(player1: player1.id, player2: player2.id, tournament_id: tournamentid)
+    end
+      
+    if (params['round'] == '3')
+      match = PingPongTournament::Match.last
+      player = PingPongTournament::Player.find_by(name: params['0'])
+      match.update(winner: player.id)
+      tournament = PingPongTournament::Tournament.find(match.tournament_id)
+      tournament.update(player_id: player.id)
+    end
+
+      
   end
 
   run! if __FILE__ == $0
