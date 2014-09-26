@@ -1,0 +1,8 @@
+<form action="/tournament" method="get">
+	<select id="tournament-select" name="id">
+		<% @tournaments.each do |t| %>
+		<option value="<%="#{t.id}"%>"><%="#{t.name}"%></option>
+		<% end %>
+	</select>
+	<input type="submit" text="submit">
+</form>

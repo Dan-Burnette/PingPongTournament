@@ -11,6 +11,7 @@ class PingPongTournament::Server < Sinatra::Application
   set :bind, '0.0.0.0'
 
   get '/' do
+    @tournaments = PingPongTournament::Tournament.all
     erb :index
   end
 
@@ -21,7 +22,19 @@ class PingPongTournament::Server < Sinatra::Application
 
 
   get '/tournament' do
-    erb :tournament
+    @tournament = PingPongTournament::Tournament.find(params['id'])
+    @matches = PingPongTournament::Match.where(tournament_id: @tournament.id)
+    if @matches.size == 7
+      @players = []
+      @matches.each do |m|
+        @players.push(PingPongTournament::Player.find(m.player1).name)
+        @players.push(PingPongTournament::Player.find(m.player2).name)
+        @players.push(PingPongTournament::Player.find(m.winner).name)
+      end
+      erb :tournament_archive
+    else
+      redirect to '/'
+    end
   end
 
   #Create a new player
