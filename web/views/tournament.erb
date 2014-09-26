@@ -43,7 +43,7 @@
 	<tr class="invisible">
 		<td></td>
 		<td></td>
-		<td class="player-cell round2-match1winner round2-match1winner finals">pizza1</td>
+		<td class="player-cell round2-match1winner round2-match1winner finals">semi winner</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -131,7 +131,7 @@
 	<tr class="invisible">
 		<td></td>
 		<td></td>
-		<td class="player-cell round2-match2winner finals">thing1</td>
+		<td class="player-cell round2-match2winner finals">semi winner</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -229,6 +229,7 @@
 				$(this).css('background-color', '#00ff00');
 				$('.round1-match1winner').text($(this).text());
 				$('.round1-match1').not($(this)).css('background-color', 'red');
+				if ($('.round1-match1winner').text() !== "winner1" && $('.round1-match2winner').text() !== "winner2" && $('.round1-match3winner').text() !== "winner3" && $('.round1-match4winner').text() !== "winner4") {$('.submit-tournament').show(this)}
 			}
 		});
 
@@ -237,6 +238,7 @@
 				$(this).css('background-color', '#00ff00');
 				$('.round1-match2winner').text($(this).text());
 				$('.round1-match2').not($(this)).css('background-color', 'red');
+				if ($('.round1-match1winner').text() !== "winner1" && $('.round1-match2winner').text() !== "winner2" && $('.round1-match3winner').text() !== "winner3" && $('.round1-match4winner').text() !== "winner4") {$('.submit-tournament').show(this)}
 			}
 		});
 
@@ -245,6 +247,7 @@
 				$(this).css('background-color', '#00ff00');
 				$('.round1-match3winner').text($(this).text());
 				$('.round1-match3').not($(this)).css('background-color', 'red');
+				if ($('.round1-match1winner').text() !== "winner1" && $('.round1-match2winner').text() !== "winner2" && $('.round1-match3winner').text() !== "winner3" && $('.round1-match4winner').text() !== "winner4") {$('.submit-tournament').show(this)}
 			}
 		});
 
@@ -253,6 +256,7 @@
 				$(this).css('background-color', '#00ff00');
 				$('.round1-match4winner').text($(this).text());
 				$('.round1-match4').not($(this)).css('background-color', 'red');
+				if ($('.round1-match1winner').text() !== "winner1" && $('.round1-match2winner').text() !== "winner2" && $('.round1-match3winner').text() !== "winner3" && $('.round1-match4winner').text() !== "winner4") {$('.submit-tournament').show(this)}
 			}
 		});
 
@@ -261,6 +265,7 @@
 				$(this).css('background-color', '#00ff00');
 				$('.round2-match1winner').text($(this).text());
 				$('.round2-match1').not($(this)).css('background-color', 'red');
+				if ($('.round2-match1winner').text() !== "semi winner" && $('.round2-match2winner').text() !== "semi winner") {$('.submit-tournament').show(this)}
 			}
 		});
 
@@ -269,6 +274,7 @@
 				$(this).css('background-color', '#00ff00');
 				$('.round2-match2winner').text($(this).text());
 				$('.round2-match2').not($(this)).css('background-color', 'red');
+				if ($('.round2-match1winner').text() !== "semi winner" && $('.round2-match2winner').text() !== "semi winner") {$('.submit-tournament').show(this)}
 			}
 		});
 
@@ -278,9 +284,12 @@
 				$('.champ').text($(this).text());
 				$('.champ').css('background-color', '#00ff00');
 				$('.finals').not($(this)).css('background-color', 'red');
+				if ($('.champ').text() !== "champion") {$('.submit-tournament').show(this)}
 			}
 		});
 
+		$('.submit-tournament').hide(this)
+		
 
 	});
 
@@ -321,5 +330,7 @@
 			}
 
 		})
+		$('.submit-tournament').hide(this)
+
 	})
 </script>
