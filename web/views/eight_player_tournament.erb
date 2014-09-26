@@ -24,17 +24,17 @@
  	console.log(checkCounter);
  });
 
- $('.myform').submit(function(e){
- 	e.preventDefault();
- });
+
 
  $('.submit-button').on('click',function(){
+
  	if (checkCounter == 8){
  		console.log("In the if");
  		$('.myform').submit();
  	}
- 	else{
- 		console.log("Not eight bro")
+ 	else {
+ 		console.log("In the else");
+ 	});
  	}
  });
 

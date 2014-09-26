@@ -59,25 +59,34 @@ class PingPongTournament::Server < Sinatra::Application
 
   post '/create_tournament' do
     players = params['players']
-    tourney_name = params['tourney_name']
-    tournament = PingPongTournament::Tournament.create(name: tourney_name, num_players: players.length)
-    while players.size > 0
-      player1 = players.delete_at(rand(players.length))
-      player2 = players.delete_at(rand(players.length))
-      player1 = PingPongTournament::Player.find_by(name: player1)
-      player2 = PingPongTournament::Player.find_by(name: player2)
-      PingPongTournament::Match.create(player1: player1.id, player2: player2.id, tournament_id: tournament.id)
-    end
-    matches = PingPongTournament::Match.where(tournament_id: tournament.id)
-    players = []
-    matches.each do |m|
-      players.push(PingPongTournament::Player.find(m.player1).name)
-      players.push(PingPongTournament::Player.find(m.player2).name)
+
+    if (players.length != 8)
+      error = "Error: You did not enter eight players"
+      erb :error, :locals => {error: error}
+  
+    else
+      tourney_name = params['tourney_name']
+      tournament = PingPongTournament::Tournament.create(name: tourney_name, num_players: players.length)
+      while players.size > 0
+        player1 = players.delete_at(rand(players.length))
+        player2 = players.delete_at(rand(players.length))
+        player1 = PingPongTournament::Player.find_by(name: player1)
+        player2 = PingPongTournament::Player.find_by(name: player2)
+        PingPongTournament::Match.create(player1: player1.id, player2: player2.id, tournament_id: tournament.id)
+      end
+      matches = PingPongTournament::Match.where(tournament_id: tournament.id)
+      players = []
+      matches.each do |m|
+        players.push(PingPongTournament::Player.find(m.player1).name)
+        players.push(PingPongTournament::Player.find(m.player2).name)
+      end
+
+      erb :tournament, :locals => {matches: matches,
+                                  tournament: tournament,
+                                  players: players}
     end
 
-    erb :tournament, :locals => {matches: matches,
-                                tournament: tournament,
-                                players: players}
+
   end
 
   # post '/stats' do
