@@ -1,9 +1,10 @@
-<table class="tg 16player">
-    <th><%=@tournament.name%></th>
+<table class="tg16player">
+    <th><h1><%=@tournament.name%><h1></th>
     <tr> 
-        <td class="round">Round1</td>
-          <td class="round">Round2</td>
-          <td class="round">Round3</td>
+        <td class="round"><h1>Round1</h1></td>
+        <td class="round"><h1>Round2</h1></td>
+        <td class="round"><h1>Round3</h1></td>
+        <td class="fake"><h1>Dingussss</h1></td>
   </tr>
     <tr>
 
@@ -170,6 +171,14 @@
 </table>
 <style type="text/css">
 
+.tg16player {
+    border-spacing: 0;
+}
+
+.fake {
+    color: #66FFCC;
+}
+
 .pointer {
     border-right: 2px solid black;
     border-width: 3px;
@@ -184,7 +193,6 @@
 .player-cell {
     font-family:Arial-Black; 
   text-align: center;
-    sans-serif;
     font-size:14px;
     padding:10px 5px;
     border-style:solid;
