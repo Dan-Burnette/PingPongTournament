@@ -61,6 +61,14 @@ class PingPongTournament::Server < Sinatra::Application
                                 players: players}
   end
 
+  # post '/stats' do
+  #   player_name = params
+  #   id = PingPongTournament::Player.find_by(name :play_name)
+    
+
+  #   #erb :statsPage, locals => {}
+  # end
+
   post '/submit-tournament' do
     puts params
     tournamentid = -1
