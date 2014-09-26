@@ -62,6 +62,13 @@ class PingPongTournament::Server < Sinatra::Application
 
   end
 
+  get '/new_tournament' do
+    players = params['players']
+    rounds = 0
+    theoretical_players = 1
+    num_players =  players.length
+  end
+
 
 
   run! if __FILE__ == $0
