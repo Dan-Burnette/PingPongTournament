@@ -14,6 +14,12 @@ class PingPongTournament::Server < Sinatra::Application
     erb :index
   end
 
+  get '/select_stats' do
+    @players = PingPongTournament::Player.all
+    erb :stats
+  end
+
+
   get '/tournament' do
     erb :tournament
   end
