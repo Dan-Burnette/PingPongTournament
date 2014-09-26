@@ -17,9 +17,8 @@ class PingPongTournament::Server < Sinatra::Application
 
   get '/select_stats' do
     @players = PingPongTournament::Player.all
-    erb :stats
+    erb :stats, :locals => {matches: false}
   end
-
 
   get '/tournament' do
     @tournament = PingPongTournament::Tournament.find(params['id'])
@@ -89,13 +88,17 @@ class PingPongTournament::Server < Sinatra::Application
 
   end
 
-  # post '/stats' do
-  #   player_name = params
-  #   id = PingPongTournament::Player.find_by(name :play_name)
-    
-
-  #   #erb :statsPage, locals => {}
-  # end
+  post '/stats' do
+    @players = PingPongTournament::Player.all
+    player_name = params['player']
+    id = PingPongTournament::Player.find_by(name: player_name).id
+    matches = PingPongTournament::Match.where("player1 = ? or player2 = ?", id, id)
+    match_wins = matches.select{|match| match.winner == id }.length
+    tournament_wins = PingPongTournament::Tournament.where("player_id = ?", id).length
+    matches_played = matches.length
+    win_percentage = (match_wins.to_f / matches_played.to_f * 100.0).to_i
+    erb :stats, :locals => {matches: matches_played, player: player_name, wins: match_wins, twins: tournament_wins, wp: win_percentage}
+  end
 
   post '/submit-tournament' do
     puts params
