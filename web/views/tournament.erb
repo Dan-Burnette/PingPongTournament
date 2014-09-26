@@ -16,10 +16,13 @@
 		<td></td>
 		<td></td>
 		<td></td>
+
 	</tr>
 	<tr class="invisible">
 		<td></td>
-		<td class="player-cell round1-match1winner">winner1</td>
+
+		<td class="player-cell round1-match1winner winner-t1 round2-match1" data-ref="<%="#{matches[0].id}"%>">winner1</td>
+
 		<td></td>
 		<td></td>
 		<td></td>
@@ -40,7 +43,7 @@
 	<tr class="invisible">
 		<td></td>
 		<td></td>
-		<td class="player-cell">round3</td>
+		<td class="player-cell round2-match1winner round2-match1winner finals">pizza1</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -59,7 +62,9 @@
 	</tr>
 	<tr class="invisible">
 		<td></td>
-		<td class="player-cell round1-match2winner">winner2</td>
+
+		<td class="player-cell round1-match2winner winner-t1 round2-match1" data-ref="<%="#{matches[1].id}"%>">winner2</td>
+
 		<td></td>
 		<td></td>
 		<td></td>
@@ -81,7 +86,7 @@
 		<td></td>
 		<td></td>
 		<td></td>
-		<td class="player-cell">champion</td>
+		<td class="player-cell champ">champion</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -100,7 +105,10 @@
 	</tr>
 	<tr class="invisible">
 		<td></td>
-		<td class="player-cell round1-match3winner">winner3</td>
+
+		<td class="player-cell round1-match3winner winner-t1 round2-match2" data-ref="<%="#{matches[2].id}"%>">winner3</td>
+
+
 		<td></td>
 		<td></td>
 		<td></td>
@@ -123,7 +131,7 @@
 	<tr class="invisible">
 		<td></td>
 		<td></td>
-		<td class="player-cell">round3</td>
+		<td class="player-cell round2-match2winner finals">thing1</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -131,7 +139,7 @@
 	</tr>
 	<tr>
 
-		<td class="player-cell round1-match4"><%=players[6]%></td>
+		<td class="player-cell round1-match4 "><%=players[6]%></td>
 
 		<td></td>
 		<td></td>
@@ -142,7 +150,9 @@
 	</tr>
 	<tr class="invisible">
 		<td></td>
-		<td class="player-cell round1-match4winner">winner4</td>
+
+		<td class="player-cell round1-match4winner winner-t1 round2-match2" data-ref="<%="#{matches[3].id}"%>">winner4</td>
+
 		<td></td>
 		<td></td>
 		<td></td>
@@ -161,6 +171,9 @@
 	</tr>
 </table>
 
+<button class='submit-tournament myButton'> Next Round </button>
+
+
 <style type="text/css">
 
 
@@ -178,23 +191,135 @@
     padding:10px 5px;
     border-style:solid;
     border-width:2px;
-    margin-right: 
+    margin:0;
+    background-color:gray;
+}
+
+.myButton {
+    background-color:#44c767 ;
+    -moz-border-radius:28px;
+    -webkit-border-radius:28px;
+    border-radius:28px;
+    border:1px solid #18ab29 ;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff ;
+    font-family:arial;
+    font-size:17px;
+    padding:16px 31px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627 ;
+}
+.myButton:hover {
+    background-color:#5cbf2a ;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
 }
 
 
 </style>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script>
+	var timesPressed = 0
 	$(document).ready(function() {
 		$('.round1-match1').on('click', function() {
-			$(this).css('background-color', '#00ff00');
-			$('.round1-match1winner').text($(this).text());
-			$('.round1-match1winner').css('background-color', '#00ff00');
-			$('.round1-match1').not($(this)).css('background-color', 'red');
+			if (timesPressed == 0){
+				$(this).css('background-color', '#00ff00');
+				$('.round1-match1winner').text($(this).text());
+				$('.round1-match1').not($(this)).css('background-color', 'red');
+			}
+		});
+
+		$('.round1-match2').on('click', function() {
+			if (timesPressed == 0){
+				$(this).css('background-color', '#00ff00');
+				$('.round1-match2winner').text($(this).text());
+				$('.round1-match2').not($(this)).css('background-color', 'red');
+			}
+		});
+
+		$('.round1-match3').on('click', function() {
+			if (timesPressed == 0){
+				$(this).css('background-color', '#00ff00');
+				$('.round1-match3winner').text($(this).text());
+				$('.round1-match3').not($(this)).css('background-color', 'red');
+			}
+		});
+
+		$('.round1-match4').on('click', function() {
+			if (timesPressed == 0){
+				$(this).css('background-color', '#00ff00');
+				$('.round1-match4winner').text($(this).text());
+				$('.round1-match4').not($(this)).css('background-color', 'red');
+			}
+		});
+
+		$('.round2-match1').on('click', function() {
+			if (timesPressed == 1) {
+				$(this).css('background-color', '#00ff00');
+				$('.round2-match1winner').text($(this).text());
+				$('.round2-match1').not($(this)).css('background-color', 'red');
+			}
+		});
+
+		$('.round2-match2').on('click', function() {
+			if (timesPressed == 1){
+				$(this).css('background-color', '#00ff00');
+				$('.round2-match2winner').text($(this).text());
+				$('.round2-match2').not($(this)).css('background-color', 'red');
+			}
+		});
+
+		$('.finals').on('click', function() {
+			if (timesPressed == 2){
+				$(this).css('background-color', '#00ff00');
+				$('.champ').text($(this).text());
+				$('.champ').css('background-color', '#00ff00');
+				$('.finals').not($(this)).css('background-color', 'red');
+			}
 		});
 
 
 	});
 
+</script>
 
+
+<script>
+//AJAX Stuff 
+	$('.submit-tournament').on('click', function(e){
+		timesPressed ++;
+		e.preventDefault();
+		if (timesPressed == 1) {
+			var myJSON = {};
+			$('.winner-t1').each(function(){
+				var winnerName = $(this).text();
+				var matchId = $(this).data('ref');
+				myJSON[winnerName] = matchId;
+			})
+		}
+
+		else if (timesPressed == 2){
+			var myJSON = {};
+			$('.finals').each(function(){
+				var winnerName = $(this).text();
+				var matchId = $(this).data('ref');
+				myJSON[winnerName] = matchId;
+			})
+		}
+
+	
+		$.ajax({
+			url: '/submit-tournament',
+			dataType: 'json',
+			type: 'POST',
+			data: myJSON,
+			success: function(){
+				console.log("I did it, I SENT...", myJSON);
+			}
+
+		})
+	})
 </script>
