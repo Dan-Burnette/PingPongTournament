@@ -1,0 +1,16 @@
+<h1>STATISTICS</h1>
+<form action = '/stats', method = 'post'>
+	<label for="player">select a player name:</label>
+	<select name="player">
+		<% if @players %>
+         <% @players.each do |p| %>
+         		<option for="players" value="<%="#{p.name}"%>"%>
+         			<%="#{p.name}"%>
+         		</option>
+         	<% end %>
+         <% end %>
+	</select>
+   <input name ='submit', type = 'submit'>
+ </form>
+
+
