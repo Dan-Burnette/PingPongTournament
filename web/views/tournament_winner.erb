@@ -1,0 +1,112 @@
+<div class="loader"></div>
+<div class="row">
+  <div class="what">
+    <p>You are The Winner!!!!! :D</p>
+    <p class="oh-yes">– <%=winner.name %> –</p>
+  </div>
+</div>
+<div class="loader r"></div>
+
+
+<style type="text/css">
+
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
+
+html, body, p {
+  margin: 0;
+  padding: 0;
+}
+
+.what {
+  margin: 0 auto;
+  width: 700px;
+  text-align: center;
+  padding: 40px 0 40px 0;
+  font-size: 72px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  color: #858BB2;
+}
+
+.oh-yes {
+  font-size: 36px;
+}
+
+.row {
+  width: 100%;
+  background-color: #f0f0f0;
+}
+
+.loader{
+width:0px;
+height:8px;
+/*linear-gradient*/
+background:-webkit-gradient(linear,left top,left bottom,from(#6E00FF),to(rgba(255,255,255,.0)));
+/*@@prefixmycss->No equivalent*/
+background:-webkit-linear-gradient(to left, #6E00FF, rgba(255,255,255,.0));
+background:   -moz-linear-gradient(to left, #6E00FF, rgba(255,255,255,.0));
+background:     -o-linear-gradient(to left, #6E00FF, rgba(255,255,255,.0));
+background:        linear-gradient(to left, #6E00FF, rgba(255,255,255,.0));
+/*animation*/
+-webkit-animation:speed 15s ease-in forwards, via 15.5s ease-out forwards;
+   -moz-animation:speed 15s ease-in forwards, via 15.5s ease-out forwards;
+    -ms-animation:speed 15s ease-in forwards, via 15.5s ease-out forwards;
+     -o-animation:speed 15s ease-in forwards, via 15.5s ease-out forwards;
+        animation:speed 15s ease-in forwards, via 15.5s ease-out forwards;
+}
+.r{
+/*animation*/
+-webkit-animation: -webkit-speed 2s cubic-bezier(1,.01,0,1) infinite, via 2s ease-out infinite;
+   -moz-animation: -moz-speed 2s cubic-bezier(1,.01,0,1) infinite, via 2s ease-out infinite;
+    -ms-animation: -ms-speed 2s cubic-bezier(1,.01,0,1) infinite, via 2s ease-out infinite;
+     -o-animation: -o-speed 2s cubic-bezier(1,.01,0,1) infinite, via 2s ease-out infinite;
+        animation:speed 2s cubic-bezier(1,.01,0,1) infinite, via 2s ease-out infinite;
+/*linear-gradient*/
+background:-webkit-gradient(linear,left top,left bottom,from(#00FFBA),to(rgba(255,255,255,.0)));
+/*@@prefixmycss->No equivalent*/
+background:-webkit-linear-gradient(to left, #00FFBA,rgba(255,255,255,.0));
+background:   -moz-linear-gradient(to left, #00FFBA,rgba(255,255,255,.0));
+background:     -o-linear-gradient(to left, #00FFBA,rgba(255,255,255,.0));
+background:        linear-gradient(to left, #00FFBA,rgba(255,255,255,.0));
+}
+@-webkit-keyframes speed{
+0% { width: 0px; }
+  100% { width: 100%; }
+}
+@-webkit-keyframes via{
+0% { opacity: 1; }
+  50% {opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-moz-keyframes speed{
+0% { width: 0px; }
+  100% { width: 100%; }
+}
+@-moz-keyframes via{
+0% { opacity: 1; }
+  50% {opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-ms-keyframes speed{
+0% { width: 0px; }
+  100% { width: 100%; }
+}
+@-ms-keyframes via{
+0% { opacity: 1; }
+  50% {opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-o-keyframes speed{
+0% { width: 0px; }
+  100% { width: 100%; }
+}
+@-o-keyframes via{
+0% { opacity: 1; }
+  50% {opacity: 1; }
+  100% { opacity: 0; }
+}
+
+</style>
