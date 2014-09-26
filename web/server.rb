@@ -152,7 +152,8 @@ class PingPongTournament::Server < Sinatra::Application
       match.update(winner: player.id)
       tournament = PingPongTournament::Tournament.find(match.tournament_id)
       tournament.update(player_id: player.id)
-      #redirect to winner pg
+
+      erb :tournament_winner, :locals => {winner: player}
     end
 
       

@@ -338,7 +338,7 @@
 				var matchId = $(this).data('ref');
 				myJSON[winnerName] = matchId;
 			})
-            compositeJSON[first] = myJSON;
+        
 		}
 
 		else if (timesPressed == 2){
@@ -350,7 +350,6 @@
 				myJSON[counter] = winnerName;
 				counter++;
 			})
-            compositeJSON[second] = myJSON;
 		}
 
 		else if (timesPressed == 3){
@@ -359,7 +358,6 @@
 				var winnerName = $(this).text();
 				myJSON[0] = winnerName;
 			})
-            compositeJSON[third] = myJSON;
 		}
 
 	
