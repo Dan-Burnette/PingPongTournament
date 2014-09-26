@@ -301,6 +301,7 @@
 <script>
 //AJAX Stuff 
 	$('.submit-tournament').on('click', function(e){
+		$(this).hide();
 		timesPressed ++;
 		e.preventDefault();
 		if (timesPressed == 1) {
