@@ -330,7 +330,6 @@
 		$(this).hide();
 		timesPressed ++;
 		e.preventDefault();
-        var compositeJSON = {}
 		if (timesPressed == 1) {
 			var myJSON = {round: 1};
 			$('.winner-t1').each(function(){
@@ -358,6 +357,7 @@
 				var winnerName = $(this).text();
 				myJSON[0] = winnerName;
 			})
+			window.location.replace('http://localhost:4567/tournament_winner');
 		}
 
 	
@@ -367,7 +367,7 @@
 			type: 'POST',
 			data: myJSON,
 			success: function(){
-				console.log("I did it, I SENT...", myJSON);
+				
 			}
 
 		})

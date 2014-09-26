@@ -20,6 +20,12 @@ class PingPongTournament::Server < Sinatra::Application
     erb :stats, :locals => {matches: false}
   end
 
+  get '/tournament_winner' do
+     winner = PingPongTournament::Tournament.last.player_id
+     winner = PingPongTournament::Player.find(winner)
+     erb :tournament_winner, :locals => {winner: winner}
+   end
+
   get '/tournament' do
     @tournament = PingPongTournament::Tournament.find(params['id'])
     @matches = PingPongTournament::Match.where(tournament_id: @tournament.id)
@@ -43,6 +49,7 @@ class PingPongTournament::Server < Sinatra::Application
      id = tournament.player_id
      winners.push(PingPongTournament::Player.find(id))
    end 
+   winners = winners.reverse
    erb :champion, :locals => {tournaments: tournaments,
                              winners: winners}
  end
