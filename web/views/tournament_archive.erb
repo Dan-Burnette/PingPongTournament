@@ -1,0 +1,234 @@
+<table class="tg 16player">
+    <th><%=@tournament.name%></th>
+    <tr> 
+        <td class="round">Round1</td>
+          <td class="round">Round2</td>
+          <td class="round">Round3</td>
+  </tr>
+    <tr>
+
+        <td class="player-cell round1-match1 0"><%=@players[0]%></td>
+
+        <td class="invisible"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+    </tr>
+    <tr class="invisible">
+        <td></td>
+
+        <td class="player-cell round1-match1winner winner-t1 round2-match1 2"><%=@players[2]%></td>
+
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+
+        <td class="player-cell round1-match1 1"><%=@players[1]%></td>
+        <td class="pointer"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr class="invisible">
+        <td></td>
+        <td></td>
+        <td class="player-cell round2-match1winner round2-match1winner finals 18"><%=@players[18]%></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+
+        <td class="player-cell round1-match2 3"><%=@players[3]%></td>
+
+        <td class="pointer"></td>
+        <td class="pointer"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr class="invisible">
+        <td></td>
+
+        <td class="player-cell round1-match2winner winner-t1 round2-match1 5"><%=@players[5]%></td>
+
+        <td class="pointer"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+
+        <td class="player-cell round1-match2 4"><%=@players[4]%></td>
+
+        <td></td>
+        <td class="pointer"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr >
+        <td ></td>
+        <td></td>
+        <td></td>
+        <td class="player-cell champ 20"><%=@players[20]%></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+
+
+        <td class="player-cell round1-match3 6"><%=@players[6]%></td>
+
+        <td></td>
+        <td class="pointer"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr class="invisible">
+        <td></td>
+
+        <td class="player-cell round1-match3winner winner-t1 round2-match2 8"><%=@players[8]%></td>
+
+
+        <td class="pointer"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+
+
+        <td class="player-cell round1-match3 7"><%=@players[7]%></td>
+
+        <td class="pointer"></td>
+        <td class="pointer"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr class="invisible">
+        <td></td>
+        <td></td>
+        <td class="player-cell round2-match2winner finals 19"><%=@players[19]%></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+
+        <td class="player-cell round1-match4 9"><%=@players[9]%></td>
+
+        <td class="pointer"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr class="invisible">
+        <td></td>
+
+        <td class="player-cell round1-match4winner winner-t1 round2-match2 11"><%=@players[11]%></td>
+
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+
+        <td class="player-cell round1-match4 10"><%=@players[10]%></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<style type="text/css">
+
+.pointer {
+    border-right: 2px solid black;
+    border-width: 3px;
+}
+
+.round {
+  font-family:Arial-Black; 
+  text-align: center;
+  padding:10px 5px;
+}
+
+.player-cell {
+    font-family:Arial-Black; 
+  text-align: center;
+    sans-serif;
+    font-size:14px;
+    padding:10px 5px;
+    border-style:solid;
+    border-width:2px;
+    margin:0;
+    background-color:gray;
+}
+
+.myButton {
+    background-color:#44c767 ;
+    -moz-border-radius:28px;
+    -webkit-border-radius:28px;
+    border-radius:28px;
+    border:1px solid #18ab29 ;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff ;
+    font-family:arial;
+    font-size:17px;
+    padding:16px 31px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627 ;
+}
+.myButton:hover {
+    background-color:#5cbf2a ;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+
+
+</style>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+    var arr = [];
+    var players = {};
+    $('.player-cell').each(function() {
+        arr.push($(this).text());
+        players[$(this).text()] = 0;
+    })
+    for (var i = 0; i < arr.length; i++) {
+        players[arr[i]] += 1;
+    }
+
+    
+</script>
