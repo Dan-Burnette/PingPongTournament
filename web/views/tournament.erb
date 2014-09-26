@@ -1,3 +1,4 @@
+
 <table>
 <tr>
     <td>
@@ -178,6 +179,7 @@
         <td class='banner' bgcolor="#33CCFF">Will</td>
         <td class='banner' bgcolor="#FF0000">You</td>
         <td class='banner' bgcolor="#FFFFFF">Win?</td>
+
     </tr>
 </table>
 <button class='submit-tournament myButton'> Next Round </button>
@@ -198,6 +200,10 @@
   font-family:Arial-Black; 
   text-align: center;
   padding:10px 5px;
+}
+
+.tg16player {
+   border-spacing: 0;
 }
 
 .player-cell {
@@ -329,6 +335,7 @@
 		}
 
 		else if (timesPressed == 2){
+			$(this).text('Results');
 			var myJSON = {round: 2};
 			var counter = 0;
 			$('.finals').each(function(){
