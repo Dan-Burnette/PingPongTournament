@@ -38,6 +38,19 @@ class PingPongTournament::Server < Sinatra::Application
     erb :eight_player_tournament
   end
 
+  post '/new_tournament' do 
+    players = params['player']
+    tourney_name = params['tournament']
+    num_players = players.length
+    num_theoretical_players = 1
+    num_rounds = 0
+    until num_theoretical_players >= num_players do
+      num_theoretical_players *= 2
+      num_rounds += 1
+    end
+    erb :new_tournament, locals => {num_rounds: num_rounds, num_theoretical_players: num_theoretical_players, tournament: tourney_name}
+  end
+
   post '/create_tournament' do
     players = params['players']
     tourney_name = params['tourney_name']
@@ -70,21 +83,12 @@ class PingPongTournament::Server < Sinatra::Application
         match = PingPongTournament::Match.find_by(id: v)
         match.update(winner: id)
 
-<<<<<<< HEAD
-  get '/new_tournament' do
-    players = params['players']
-    rounds = 0
-    theoretical_players = 1
-    num_players =  players.length
-  end
 
-=======
         #if params.length ==1, that match is the final match; that winner id is the tournament winner
         #Need to set that player id to the tournament winner
         if (params.length == 1)
           #TODO
         end
->>>>>>> 935104e26d369362062ee10d76845916be95d34a
 
       end
   end
