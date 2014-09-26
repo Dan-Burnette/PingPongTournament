@@ -62,15 +62,21 @@ class PingPongTournament::Server < Sinatra::Application
   end
 
   post '/submit-tournament' do
+    puts params
 
-    params.each do |k,v|
-      player = PingPongTournament::Player.find_by(name: k)
-      id = player.id
-      match = PingPongTournament::Match.find_by(id: v)
-      match.update(winner: id)
-    end
-    
+      params.each do |k,v|
+        player = PingPongTournament::Player.find_by(name: k)
+        id = player.id
+        match = PingPongTournament::Match.find_by(id: v)
+        match.update(winner: id)
 
+        #if params.length ==1, that match is the final match; that winner id is the tournament winner
+        #Need to set that player id to the tournament winner
+        if (params.length == 1)
+          #TODO
+        end
+
+      end
   end
 
   run! if __FILE__ == $0

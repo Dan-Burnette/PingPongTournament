@@ -21,7 +21,7 @@
 	<tr class="invisible">
 		<td></td>
 
-		<td class="player-cell round1-match1winner winner round2-match1" data-ref="<%="#{matches[0].id}"%>">winner1</td>
+		<td class="player-cell round1-match1winner winner-t1 round2-match1" data-ref="<%="#{matches[0].id}"%>">winner1</td>
 
 		<td></td>
 		<td></td>
@@ -43,7 +43,7 @@
 	<tr class="invisible">
 		<td></td>
 		<td></td>
-		<td class="player-cell round2-match1winner round2-match1winner finals"></td>
+		<td class="player-cell round2-match1winner round2-match1winner finals">pizza1</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -63,7 +63,7 @@
 	<tr class="invisible">
 		<td></td>
 
-		<td class="player-cell round1-match2winner winner round2-match1" data-ref="<%="#{matches[1].id}"%>">winner2</td>
+		<td class="player-cell round1-match2winner winner-t1 round2-match1" data-ref="<%="#{matches[1].id}"%>">winner2</td>
 
 		<td></td>
 		<td></td>
@@ -106,7 +106,7 @@
 	<tr class="invisible">
 		<td></td>
 
-		<td class="player-cell round1-match3winner winner round2-match2" data-ref="<%="#{matches[2].id}"%>">winner3</td>
+		<td class="player-cell round1-match3winner winner-t1 round2-match2" data-ref="<%="#{matches[2].id}"%>">winner3</td>
 
 
 		<td></td>
@@ -131,7 +131,7 @@
 	<tr class="invisible">
 		<td></td>
 		<td></td>
-		<td class="player-cell round2-match2winner finals"></td>
+		<td class="player-cell round2-match2winner finals">thing1</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -151,7 +151,7 @@
 	<tr class="invisible">
 		<td></td>
 
-		<td class="player-cell round1-match4winner winner round2-match2" data-ref="<%="#{matches[3].id}"%>">winner4</td>
+		<td class="player-cell round1-match4winner winner-t1 round2-match2" data-ref="<%="#{matches[3].id}"%>">winner4</td>
 
 		<td></td>
 		<td></td>
@@ -222,48 +222,63 @@
 </style>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script>
+	var timesPressed = 0
 	$(document).ready(function() {
 		$('.round1-match1').on('click', function() {
-			$(this).css('background-color', '#00ff00');
-			$('.round1-match1winner').text($(this).text());
-			$('.round1-match1').not($(this)).css('background-color', 'red');
+			if (timesPressed == 0){
+				$(this).css('background-color', '#00ff00');
+				$('.round1-match1winner').text($(this).text());
+				$('.round1-match1').not($(this)).css('background-color', 'red');
+			}
 		});
 
 		$('.round1-match2').on('click', function() {
-			$(this).css('background-color', '#00ff00');
-			$('.round1-match2winner').text($(this).text());
-			$('.round1-match2').not($(this)).css('background-color', 'red');
+			if (timesPressed == 0){
+				$(this).css('background-color', '#00ff00');
+				$('.round1-match2winner').text($(this).text());
+				$('.round1-match2').not($(this)).css('background-color', 'red');
+			}
 		});
 
 		$('.round1-match3').on('click', function() {
-			$(this).css('background-color', '#00ff00');
-			$('.round1-match3winner').text($(this).text());
-			$('.round1-match3').not($(this)).css('background-color', 'red');
+			if (timesPressed == 0){
+				$(this).css('background-color', '#00ff00');
+				$('.round1-match3winner').text($(this).text());
+				$('.round1-match3').not($(this)).css('background-color', 'red');
+			}
 		});
 
 		$('.round1-match4').on('click', function() {
-			$(this).css('background-color', '#00ff00');
-			$('.round1-match4winner').text($(this).text());
-			$('.round1-match4').not($(this)).css('background-color', 'red');
+			if (timesPressed == 0){
+				$(this).css('background-color', '#00ff00');
+				$('.round1-match4winner').text($(this).text());
+				$('.round1-match4').not($(this)).css('background-color', 'red');
+			}
 		});
 
-			$('.round2-match1').on('click', function() {
-			$(this).css('background-color', '#00ff00');
-			$('.round2-match1winner').text($(this).text());
-			$('.round2-match1').not($(this)).css('background-color', 'red');
+		$('.round2-match1').on('click', function() {
+			if (timesPressed == 1) {
+				$(this).css('background-color', '#00ff00');
+				$('.round2-match1winner').text($(this).text());
+				$('.round2-match1').not($(this)).css('background-color', 'red');
+			}
 		});
 
-			$('.round2-match2').on('click', function() {
-			$(this).css('background-color', '#00ff00');
-			$('.round2-match2winner').text($(this).text());
-			$('.round2-match2').not($(this)).css('background-color', 'red');
+		$('.round2-match2').on('click', function() {
+			if (timesPressed == 1){
+				$(this).css('background-color', '#00ff00');
+				$('.round2-match2winner').text($(this).text());
+				$('.round2-match2').not($(this)).css('background-color', 'red');
+			}
 		});
 
-			$('.finals').on('click', function() {
-			$(this).css('background-color', '#00ff00');
-			$('.champ').text($(this).text());
-			$('.champ').css('background-color', '#00ff00');
-			$('.finals').not($(this)).css('background-color', 'red');
+		$('.finals').on('click', function() {
+			if (timesPressed == 2){
+				$(this).css('background-color', '#00ff00');
+				$('.champ').text($(this).text());
+				$('.champ').css('background-color', '#00ff00');
+				$('.finals').not($(this)).css('background-color', 'red');
+			}
 		});
 
 
@@ -275,17 +290,27 @@
 <script>
 //AJAX Stuff 
 	$('.submit-tournament').on('click', function(e){
+		timesPressed ++;
 		e.preventDefault();
-		var myJSON = {};
+		if (timesPressed == 1) {
+			var myJSON = {};
+			$('.winner-t1').each(function(){
+				var winnerName = $(this).text();
+				var matchId = $(this).data('ref');
+				myJSON[winnerName] = matchId;
+			})
+		}
 
+		else if (timesPressed == 2){
+			var myJSON = {'test': "dingustester"};
+			$('.finals').each(function(){
+				var winnerName = $(this).text();
+				var matchId = $(this).data('ref');
+				myJSON[winnerName] = matchId;
+			})
+		}
 
-		$('.winner').each(function(){
-			var winnerName = $(this).text();
-			var matchId = $(this).data('ref');
-			myJSON[winnerName] = matchId;
-		})
-
-		//Should send JSON in form {0: "winner1", 1: "winner2", 2: "winner3" etc}
+	
 		$.ajax({
 			url: '/submit-tournament',
 			dataType: 'json',
