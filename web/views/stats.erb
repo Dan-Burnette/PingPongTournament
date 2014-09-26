@@ -12,5 +12,24 @@
 	</select>
    <input name ='submit', type = 'submit'>
  </form>
+</br>
 
 
+ <% if matches %>
+ 	<table>
+ 		<tr>
+ 			<td>Name</td>
+ 			<td>matches</td>
+ 			<td>match wins</td>
+ 			<td>win %</td>
+ 			<td>tournament wins</td>
+ 		</tr>
+ 		<tr>
+ 			<td><%=player%></td>
+ 			<td><%=matches%></td>
+ 			<td><%=wins%></td>
+ 			<td><%=wp%></td>
+ 			<td><%=twins%></td>
+ 		</tr>
+ 	</table>
+ <%end%>
