@@ -36,6 +36,17 @@ class PingPongTournament::Server < Sinatra::Application
     end
   end
 
+  get '/champion' do
+   tournaments = PingPongTournament::Tournament.where.not(player_id: nil)
+   winners= []
+   tournaments.each do |tournament|
+     id = tournament.player_id
+     winners.push(PingPongTournament::Player.find(id))
+   end 
+   erb :champion, :locals => {tournaments: tournaments,
+                             winners: winners}
+ end
+
   #Create a new player
   get '/create' do
     erb :new_player
